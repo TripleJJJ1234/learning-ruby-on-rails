@@ -29,14 +29,17 @@ class BlogsController < ApplicationController
     respond_to do |format|
       if @blog.save
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        
       else
         format.html { render :new }
-        
       end
     end
   end
 
+def show
+  @portfolio_item = Portfolio.find(params[:id])
+end
+
+end
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
@@ -64,7 +67,7 @@ class BlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
