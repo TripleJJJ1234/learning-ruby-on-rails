@@ -39,7 +39,6 @@ def show
   @portfolio_item = Portfolio.find(params[:id])
 end
 
-end
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
   def update
