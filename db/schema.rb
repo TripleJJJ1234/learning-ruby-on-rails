@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20170622152148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
-    t.integer "status"
+    t.integer "status",  default: 0
     t.integer "topic_id"
     t.index ["slug"], name: "index_blogs_on_slug", unique: true
     t.index ["topic_id"], name: "index_blogs_on_topic_id"
@@ -56,7 +56,15 @@ ActiveRecord::Schema.define(version: 20170622152148) do
     t.datetime "updated_at", null: false
     t.text "badge"
   end
-
+  
+  create_table "technologies", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "portfolio_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["portfolio_id"], name: "index_technologies_on_portfolio_id", using: :btree
+  end
+  
   create_table "topics", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -64,4 +72,5 @@ ActiveRecord::Schema.define(version: 20170622152148) do
   end
 
   add_foreign_key "blogs", "topics"
+  add_foreign_key "technologies", "portfolios"
 end
