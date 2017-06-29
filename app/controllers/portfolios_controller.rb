@@ -68,3 +68,4 @@ end
      @porfolio_item = Portfolio.find(params[:id])
  end
   
+end
