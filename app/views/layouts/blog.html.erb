@@ -9,7 +9,7 @@
 
     <meta name="viewport" content="<%= @seo_keywords %>" />
 
-    <%= stylesheet_link_tag   'blogs', media: 'all', 'data-turbolinks-tracks'L 'reload' %>
+    <%= stylesheet_link_tag   'blogs', media: 'all', 'data-turbolinks-tracks': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -22,7 +22,7 @@
 
       <div class="row">
 
-        <% yield %>
+        <%= yield %>
 
            <%= render 'shared/blog_sidebar' %>
       </div>      

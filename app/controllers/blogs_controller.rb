@@ -41,7 +41,8 @@ class BlogsController < ApplicationController
   end
 
 def show
-  @portfolio_item = Portfolio.find(params[:id])
+  @page_title = @blog.title
+  @seo_keywords = @blog.body
 end
 
   # PATCH/PUT /blogs/1
