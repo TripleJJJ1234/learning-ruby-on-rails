@@ -13,6 +13,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
+    
     @page_title = @blog.title
     @seo_keywords = @blog.body
   end
@@ -39,11 +42,6 @@ class BlogsController < ApplicationController
       end
     end
   end
-
-def show
-  @page_title = @blog.title
-  @seo_keywords = @blog.body
-end
 
   # PATCH/PUT /blogs/1
   # PATCH/PUT /blogs/1.json
