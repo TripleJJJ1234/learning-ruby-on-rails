@@ -21,9 +21,9 @@
         <p><%= t.name %></p>
         <% end %>
         
-        <%= if logged_in?(:site_admin) %>
+        <% if logged_in?(:site_admin) %>
           <div class="col-md-12">
-            <%= link_to "Edit Item", edit_portfolio_item_path(@portfolio_item), class: 'btn btn_warning' 
+            <%= link_to "Edit Item", edit_portfolio_item_path(@portfolio_item), class: 'btn btn_warning' %> 
           </div>
         <% end %>  
      </div>
