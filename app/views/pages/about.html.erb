@@ -1,16 +1,66 @@
-<h1>About Me</h1>
-
-<hr>
-
-<div class="row">
-    <div class="col-md-4">
-      <%= image_tag "me.jpg", width: 300, alt: "profile image" %>
-
-    </div>
-  
-  <div class="col-md-8">
-    <p>Welcome to my blog! I am very excited. This is new for me, so I'm still getting used to things. </p>
+<div class="app-card-container">
+  <div class="card">
+    <h1>About Me</h1>
     
-    <p>I love to sing and play different instruments. I play the guitar, viola, ukulele, and the piano. I love spending time with me family and friends. I am the youngest in my family. I love going hiking, watching movies, reading, etc.</p>
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-4">
+          <%= image_tag "me.jpg", width: 300, alt: "profile image", class: 'profile-img' %>
+        </div>
+      
+      <div class="col-md-8">
+        <p>Welcome to my blog! I am very excited. This is new for me, so I'm still getting used to things. I am a Junior at Orem High School. Graduating 2K19:)</p>
+        
+        <p>I love to sing and play different instruments. I play the guitar, viola, ukulele, and the piano. I love spending time with me family and friends. I am the youngest in my family. I love going hiking, watching movies, reading, etc.</p>
+      
+  <p>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#jobHistory"
+            aria-expanded="false"
+            aria-controler="jobHistory"
+          >
+            Job History
+          </button>
+
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#education"
+            aria-expanded="false"
+            aria-controler="education"
+          >
+            Education
+          </button>
+        </p>
+
+        <p>
+          <div class="collapse" id="jobHistory">
+            <div class="card card-block">
+              Volunteer at Intermountain Hospital
+            </div>
+            <div class="card card-block">
+              Job 2
+            </div>
+          </div>
+
+          <div class="collapse" id="education">
+            <div class="card card-block">
+              Orem High School
+            </div>
+            <div class="card card-block">
+              College
+            </div>
+            <div class="card card-block">
+              School 3
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
